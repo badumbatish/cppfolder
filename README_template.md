@@ -76,19 +76,24 @@ You can begin develop by having these file ready in this structure
 ```
 ###   Build
 Include the header XXX.h in your .cpp file
+
 ``C++
 #include bla bla bla
 #include "XXX.h"
 ``
+
 COMMAND LINE
 Then use add this part to the end of your compiling instruction
+
 ``
 -L/usr/local/lib -lXXX
 ``
 Example:
+
 ``
 g++ -O3 -std=c++14 -g -o main main.cpp -L/usr/local/lib -lXXX
 ``
+
 ## Community
 
 This is open-source, you can use this library how ever you wish to use it.

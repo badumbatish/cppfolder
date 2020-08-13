@@ -5,8 +5,11 @@ Setting the same things up and typing them all over again can be quite terrifyin
 I figure by having this template of a project like this, my workflow will be better and I don't have to bother setting up things again. I just have to follow the instructions in the folder
 
 I included the normal coding stuff and a google test folder in here.
+
 A readme template is also present.
+
 Instruction files are in each folders.
+
 Valgrind will be here soon and makefile for each folder will absolutely arrive (maybe) a week later.
 
 MIT licensed, anybody can use it.
