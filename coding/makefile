@@ -4,7 +4,7 @@ obj = $(src:.cpp=.o)
 dep = $(obj:.o=.d) 
 
 
-OUTPUTFILE = main.o
+OUTPUTFILE = final.o
 CXXFLAGS= -O2 -g -std=c++14  # Flags option used for compiling C++ files
 
 # Compiler Options
