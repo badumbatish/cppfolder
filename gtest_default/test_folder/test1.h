@@ -1,3 +1,3 @@
-TEST(A,a13) {
-	EXPECT_EQ(0,0);
+TEST(FactorialTest, HandlesZeroInput) {
+  EXPECT_EQ(1, 1);
 }

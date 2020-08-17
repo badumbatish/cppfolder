@@ -1,18 +1,18 @@
 ### find and replace temp with your name of library
-src = main.cpp
+src = $(wildcard *.cpp)
 obj = $(src:.cpp=.o)
 dep = $(obj:.o=.d) 
 
 INSTALL_DIR = /usr/local/bin
 OUTPUTFILE = final.o
 CXXFLAGS= -O2 -g -std=c++14  # Flags option used for compiling C++ files
-
+LDFLAGS = 
 # Compiler Options
 CC       = g++ # compiler used for compiling C files 
 CXX      = g++ # compiler used for compiling C++ files
 
 $(OUTPUTFILE): $(obj)
-	$(CXX) $(CXXFLAGS) -o $@ $^ 
+	$(CXX) $(CXXFLAGS) -o $@ $^  $(LDFLAGS)
 
 # Generate dependencies of .cpp files 
 -include $(dep)

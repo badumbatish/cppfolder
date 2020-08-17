@@ -2,7 +2,7 @@
 
 
 
-src = main.cpp
+src = $(wildcard *.cpp)
 obj = $(src:.cpp=.o)
 dep = $(obj:.o=.d) 
 
@@ -10,7 +10,7 @@ INSTALL_DIR = /usr/local/bin
 OUTPUTFILE = final.o
 LDFLAGS = -L/usr/src/googletest/googletest -lgtest -pthread 
 CXXFLAGS= -O0 -g -std=c++14 -Wall 
-TARGET = demo
+
   # Flags option used for compiling C++ files
 
 # Compiler Options

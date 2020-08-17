@@ -88,6 +88,7 @@ Then use add this part to the end of your compiling instruction
 ``
 -L/usr/local/lib -lXXX
 ``
+
 Example:
 
 ``

@@ -1,8 +1,8 @@
-#include <iostream>
-#include "gtest/gtest.h"
 
+
+#include "gtest/gtest.h"
+#include "test_folder/test1.h"
 // BELOW IS TESTS
-#include "include_test.h"
 
 
 int main(int argc, char **argv) {
