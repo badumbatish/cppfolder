@@ -4,7 +4,7 @@
 
 ## Index
 
-- [About](#About)
+- [About](#about)
 - [Usage](#usage)
   - [Installation](#installation)
   - [Examples](#examples)
@@ -34,6 +34,7 @@ Use it to speed up your C++ project setup.
 
 ```
 // Clone this github to your folder
+
 cd /Your/Path/To/Folder
 git clone https://github.com/tanghocle123/cppfolder.git
 ```
@@ -41,17 +42,60 @@ git clone https://github.com/tanghocle123/cppfolder.git
 ###   Examples
 
 #### Start from the top directory - cppfolder/
+##### Default make
 ```
-make 
+make
 ```
 Result:
 ```
+make -C coding/ 
+make[1]: Entering directory '/home/jack2510/Documents/code/project/standardcpp/coding'
+// Do stuff in one folder 
+make[1]: Leaving directory '/home/jack2510/Documents/code/project/standardcpp/coding'
+
+
+make -C gtest_default/ 	
+make[1]: Entering directory '/home/jack2510/Documents/code/project/standardcpp/gtest_default'
+// Do stuff in another folder 
+make[1]: Leaving directory '/home/jack2510/Documents/code/project/standardcpp/gtest_default'
+```
+##### make with TARGET
+
+Available target names are in each of the makefiles in each subfolder
+```
+make TARGET=run
+```
 
 ```
+make -C coding/ run
+make[1]: Entering directory '/home/jack2510/Documents/code/project/standardcpp/coding'
+// Do stuff in one folder
+make[1]: Leaving directory '/home/jack2510/Documents/code/project/standardcpp/coding'
+
+make -C gtest_default/ run
+make[1]: Entering directory '/home/jack2510/Documents/code/project/standardcpp/gtest_default'
+// Do stuff in another folder
+make[1]: Leaving directory '/home/jack2510/Documents/code/project/standardcpp/gtest_default'
+```
+
+#### In subfolders
+Subfolder makefiles syntaxes are exactly like in the top folder, but without TARGET=...
+For example
+```
+// Running the output file
+make run
+```
+
+```
+./final.o
+Yes
+```
+
 ##  Development
 
 ###  Pre-Requisites
-- [Googletest](https://github.com/google/googletest) and [***](***) for testing
+- [Googletest](https://github.com/google/googletest) for testing
+- [Valgrind] for checking memory leaks and profiling.
 - C++11 or newer for developing code
 - A compiler.
 - Text editor or IDE.
@@ -63,35 +107,19 @@ As long as you have a GCC or G++ compiler that supports C++11, you should be goo
 You can begin develop by having these file ready in this structure
 
 ```
-├── XXX
-│   ├── XXX.cpp
-│   ├── XXX.h
+├── coding
+│   ├── temp.cpp
+│   ├── temp.h
 │   └──main.cpp
-└── XXX_tester
+└── gtest_default
     ├── include_test.h
- 	├── main.cpp
+ 	  ├── main.cpp
     └── Test_folder
 ```
-###   Build
-Include the header XXX.h in your .cpp file
-
-``C++
-#include bla bla bla
-#include "XXX.h"
-``
-
-COMMAND LINE
-Then use add this part to the end of your compiling instruction
-
-``
--L/usr/local/lib -lXXX
-``
-
-Example:
-
-``
-g++ -O3 -std=c++14 -g -o main main.cpp -L/usr/local/lib -lXXX
-``
+### Build
+```
+make
+```
 
 ## Community
 
@@ -109,13 +137,12 @@ This is open-source, you can use this library how ever you wish to use it.
 
  3. **Code contribution** <br>
  Hit me up with an issue for
- - How to speed up the computation?
  - More operations ...
 
 
 
 ##  Resources
-These are the resources I learned from to make this library come true.
+
 ### MAKEFILE
 
 
