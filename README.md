@@ -8,10 +8,6 @@ I included the normal coding stuff and a google test folder in here.
 
 A readme template is also present.
 
-Instruction files are in each folders.
-
-Valgrind will be here soon and makefile for each folder will absolutely arrive (maybe) a week later.
-
 MIT licensed, anybody can use it.
 
 
