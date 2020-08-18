@@ -5,16 +5,15 @@
 ## Index
 
 - [About](#about)
-- [Usage](#usage)
+- [Usage preview](#usage-preview)
   - [Installation](#installation)
   - [Examples](#examples)
     - [Start from the top directory - cppfolder/](#start-from-the-top-directory)
       - [Default make](#default-make)
       - [make with TARGET](#make-with-target)
     - [In subfolders](#in-subfolders)
-- [Development](#development)
+- [Using cppfolder](#using-cppfolder)
   - [Pre-Requisites](#pre-requisites)
-  - [Development Environment](#development-environment)
   - [File Structure](#file-structure)
   - [Build](#build) 
 - [Community](#community)
@@ -31,7 +30,7 @@ I figure by having this template of a project like this, my workflow will be bet
 
 Linux supported and terminal based. Doesn't involve any IDE
 
-## Usage
+## Usage preview
 Use it to speed up your C++ project setup.
 
 ###   Installation
@@ -71,6 +70,9 @@ Available target names are in each of the makefiles in each subfolder
 make TARGET=run
 ```
 
+Result:
+
+
 ```
 make -C coding/ run
 make[1]: Entering directory '/home/jack2510/Documents/code/project/standardcpp/coding'
@@ -85,32 +87,34 @@ make[1]: Leaving directory '/home/jack2510/Documents/code/project/standardcpp/gt
 
 #### In subfolders
 Subfolder makefiles syntaxes are exactly like in the top folder, but without TARGET=...
+
 For example
 ```
 // Running the output file
 make run
 ```
+Result:
+
 
 ```
 ./final.o
 Yes
 ```
 
-##  Development
+##  Using cppfolder
+
+### Wiki
+
 
 ###  Pre-Requisites
 - [Googletest](https://github.com/google/googletest) for testing
-- [Valgrind] for checking memory leaks and profiling.
-- C++11 or newer for developing code
-- A compiler.
+- [Valgrind](https://valgrind.org/) for checking memory leaks and profiling.
+- A compiler that supports C++11 or newer for developing code
 - Text editor or IDE.
 
-###  Development Environment
-As long as you have a GCC or G++ compiler that supports C++11, you should be good.
 
 ###  File Structure
-You can begin develop by having these file ready in this structure
-
+File structure aren't to be changed because makefile needs the structure to stay the same.
 ```
 ├── coding
 │   ├── temp.cpp
