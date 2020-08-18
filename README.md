@@ -118,7 +118,7 @@ You can begin develop by having these file ready in this structure
 │   └──main.cpp
 └── gtest_default
     ├── include_test.h
- 	  ├── main.cpp
+    ├── main.cpp
     └── Test_folder
 ```
 ### Build
