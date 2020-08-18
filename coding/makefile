@@ -4,8 +4,12 @@ obj = $(src:.cpp=.o)
 dep = $(obj:.o=.d) 
 
 INSTALL_DIR = /usr/local/bin
+
 OUTPUTFILE = final.o
-CXXFLAGS= -O2 -g -std=c++14  # Flags option used for compiling C++ files
+
+
+
+CXXFLAGS= -O0  -g -Wall -fno-inline -std=c++14  # Flags option used for compiling C++ files
 LDFLAGS = 
 # Compiler Options
 CC       = g++ # compiler used for compiling C files 
@@ -19,6 +23,30 @@ $(OUTPUTFILE): $(obj)
 %.d: %.cpp
 	$(CXX) $(CXXFLAGS) $< -MM -MT $(@:.d=.o) >$@
 	
+
+#######################
+### VALGRIND SECTION
+#######################
+DEBUGFILE = debug
+DEBUGFLAGS =  --tool=memcheck --leak-check=yes --log-file=$(DEBUGFILE)
+
+.PHONY: valg_all
+valg_all:	valg show_debug
+
+.PHONY: valg
+valg:
+	valgrind $(DEBUGFLAGS) ./$(OUTPUTFILE)
+
+.PHONY: show_debug
+show_debug:
+	cat $(DEBUGFILE)
+
+#######################
+## CLEANING THINGS UP
+#######################
+.PHONY: cleanall 
+cleanall: clean cleandep
+
 .PHONY: clean
 clean:
 	rm -f $(obj) $(OUTPUTFILE)
@@ -26,10 +54,18 @@ clean:
 cleandep:
 	rm -f $(dep)
 	
+
+#######################
+## RUNNING OUTPUT FILE
+#######################
 .PHONY: run
 run:
 	./$(OUTPUTFILE)
-	
+
+
+#######################
+## INSTALL OUTPUT FILE
+#######################
 .PHONY: install
 install:
 	sudo cp $(OUTPUTFILE) $(INSTALL_DIR) 
