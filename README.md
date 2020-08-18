@@ -102,9 +102,7 @@ Yes
 ```
 
 ##  Using cppfolder
-
-### Wiki
-
+Cppfolder is plug and play as long as you have the pre-requisites ready.
 
 ###  Pre-Requisites
 - [Googletest](https://github.com/google/googletest) for testing
