@@ -8,6 +8,10 @@
 - [Usage](#usage)
   - [Installation](#installation)
   - [Examples](#examples)
+    - [Start from the top directory - cppfolder/](#start-from-the-top-directory)
+      - [Default make](#default-make)
+      - [make with TARGET](#make-with-target)
+    - [In subfolders](#in-subfolders)
 - [Development](#development)
   - [Pre-Requisites](#pre-requisites)
   - [Development Environment](#development-environment)
@@ -41,7 +45,8 @@ git clone https://github.com/tanghocle123/cppfolder.git
 
 ###   Examples
 
-#### Start from the top directory - cppfolder/
+#### Start from the top directory
+Start from the top directory when you want to run everything without going into each subfolders.
 ##### Default make
 ```
 make
