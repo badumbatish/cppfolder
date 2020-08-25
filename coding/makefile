@@ -31,14 +31,14 @@ DEBUGFILE = debug
 DEBUGFLAGS =  --tool=memcheck --leak-check=yes --log-file=$(DEBUGFILE)
 
 .PHONY: valg_all
-valg_all:	valg show_debug
+valg_all:	valg valg_show_print
 
 .PHONY: valg
 valg:
 	valgrind $(DEBUGFLAGS) ./$(OUTPUTFILE)
 
-.PHONY: show_debug
-show_debug:
+.PHONY: valg_show_print
+valg_show_print:
 	cat $(DEBUGFILE)
 
 #######################
@@ -54,6 +54,14 @@ clean:
 cleandep:
 	rm -f $(dep)
 	
+
+#######################
+## Debugging
+#######################
+.PHONY: gdb
+gdb: 
+	gdb ./$(OUTPUTFILE)
+
 
 #######################
 ## RUNNING OUTPUT FILE
