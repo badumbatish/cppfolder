@@ -27,7 +27,7 @@ $(OUTPUTFILE): $(obj)
 #######################
 ### VALGRIND SECTION
 #######################
-VALG_FILE = debug
+VALG_FILE = valg_log
 VALG_FLAGS =  --tool=memcheck --leak-check=yes --log-file=$(VALG_FILE)
 
 .PHONY: valg_all
