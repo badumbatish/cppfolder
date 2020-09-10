@@ -26,6 +26,38 @@ $(OUTPUTFILE): $(obj)
 %.d: %.cpp
 	$(CXX) $(CXXFLAGS) $< -MM -MT $(@:.d=.o) >$@ 
 	
+#######################
+### VALGRIND SECTION
+#######################
+VALG_FILE = debug
+VALG_FLAGS =  --tool=memcheck --leak-check=yes --log-file=$(VALG_FILE)
+
+.PHONY: valg_all
+valg_all:	valg valg_show_print
+
+.PHONY: valg
+valg:
+	valgrind $(VALG_FLAGS) ./$(OUTPUTFILE)
+
+.PHONY: valg_show_print
+valg_show_print:
+	cat $(VALG_FILE)
+
+#######################
+## Debugging
+#######################
+.PHONY: gdb
+gdb: 
+	gdb ./$(OUTPUTFILE)
+
+
+#######################
+## CLEANING THINGS UP
+#######################
+	
+.PHONY: cleanall 
+cleanall: clean cleandep
+
 .PHONY: clean
 clean:
 	rm -f $(obj) $(OUTPUTFILE)
