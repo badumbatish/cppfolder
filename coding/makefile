@@ -54,7 +54,7 @@ gdb:
 ## CLEANING THINGS UP
 #######################
 .PHONY: cleanall 
-cleanall: clean cleandep
+cleanall: clean cleandep clean_valg
 
 .PHONY: clean
 clean:
@@ -63,7 +63,9 @@ clean:
 cleandep:
 	rm -f $(dep)
 	
-
+.PHONY: clean_valg
+clean_valg:
+	rm -f $(VALG_FILE)
 
 
 
