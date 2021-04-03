@@ -1,5 +1,6 @@
+
+folders=$(wildcard */)
 all:
-	+$(MAKE) -C coding/ $(TARGET)
-	+$(MAKE) -C gtest_default/ $(TARGET)	
+	$(foreach var,$(folders), make -C $(var) $(TARGET);)
 
 	
